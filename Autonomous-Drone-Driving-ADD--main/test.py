@@ -16,7 +16,7 @@ frame_read = tello.get_frame_read()
 
 tello.takeoff()
 
-tello.move_up(70) # s'élève de 70cm en plus pour être a hauteur humaine
+tello.move_up(60) # s'élève de 60cm en plus pour être a hauteur humaine
 
 
 for i in range (50): #boucle while meilleur mais flemme de traiter comment arreter la boucle
@@ -25,8 +25,9 @@ for i in range (50): #boucle while meilleur mais flemme de traiter comment arret
     image = cv2.imread("picture.png")
     result, coordinates, barycenter = detector.run_object_detection(image) # Exécute la détection de personne sur l'image
     #print(coordinates, barycenter) # Affiche les coordonnées et le barycentre (optionnel, pratique pour debugage et tests)
-    rapport = (coordinates[1] - coordinates[0]) / (coordinates[3] - coordinates[2])
     if (coordinates != [0,0,0,0]):
+        rapport = (coordinates[1] - coordinates[0]) / (coordinates[3] - coordinates[2])
+
         bx = barycenter[0] # Coordonnée x du barycentre
         by = barycenter[1] # Coordonnée y du barycentre
         
@@ -41,7 +42,7 @@ for i in range (50): #boucle while meilleur mais flemme de traiter comment arret
             print("rotate left")
             tello.rotate_counter_clockwise(10)  
 
-        # LIGNES SUIVANTES A TESTER EN ESPACE LIBRE 
+        # LIGNES SUIVANTES A TESTER 
         #elif (rapport >= 2 and by < 220):
         #    print("move frontward")
         #    tello.move_forward(20) 
@@ -58,6 +59,8 @@ print(t)
 print(np.mean(t))    
 
 #tello.flip_forward() #pour le lul
+
+time.sleep(5)
 
 tello.land()
                 
