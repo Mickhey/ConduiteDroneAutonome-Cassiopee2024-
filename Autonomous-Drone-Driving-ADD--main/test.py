@@ -19,7 +19,7 @@ tello.move_up(60) # s'élève de 60cm en plus pour être a hauteur humaine
 
 
 for i in range (50): #boucle while meilleur mais flemme de traiter comment arreter la boucle
-
+    start = time.time()
     image = frame_read.frame
 
     result, coordinates, barycenter = detector.run_object_detection(image) # Exécute la détection de personne sur l'image
@@ -45,13 +45,14 @@ for i in range (50): #boucle while meilleur mais flemme de traiter comment arret
         #elif (rapport >= 2 and by < 220):
         #    print("move frontward")
         #    tello.move_forward(20) 
-        elif (by > 260):
-            print("move backward")
-            tello.move_back(20) 
+        #elif (by > 260):
+        #    print("move backward")
+        #    tello.move_back(20) 
     
     #key = cv2.waitKey(1) # Ajoute un petit délai pour permettre à l'interface graphique de se mettre à jour
     #cv2.imshow("Drone tracking",image) si vous arrivez a faire marcher cv2.imshow
-
+    end = time.time()
+    print(end-start)
 
 
 tello.land()
