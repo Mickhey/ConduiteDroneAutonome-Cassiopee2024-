@@ -5,7 +5,7 @@ import numpy as np
 from threading import Thread
 
 
-
+##########################cette version ne marche pas ###############################################################
 
 tello = Tello()
 tello.connect()
