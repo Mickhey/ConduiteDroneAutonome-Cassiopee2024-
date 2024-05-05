@@ -1,0 +1,341 @@
+[INFO] tello.py - 462 - Response takeoff: 'ok'
+[INFO] tello.py - 438 - Send command: 'up 60'
+[INFO] tello.py - 462 - Response up 60: 'ok'
+
+0: 480x640 1 person, 69.4ms
+Speed: 3.3ms preprocess, 69.4ms inference, 702.1ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 0
+delai en seconde 2.8275270462036133
+temps d'inférence + calcul barycentre 2.1261379718780518
+
+0: 480x640 1 person, 46.5ms
+Speed: 1.5ms preprocess, 46.5ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 1
+delai en seconde 1.010589838027954
+temps d'inférence + calcul barycentre 0.054646968841552734
+
+0: 480x640 1 person, 43.0ms
+Speed: 1.6ms preprocess, 43.0ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 2
+delai en seconde 1.1055026054382324
+temps d'inférence + calcul barycentre 0.0521855354309082
+
+0: 480x640 1 person, 45.7ms
+Speed: 1.6ms preprocess, 45.7ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 3
+delai en seconde 0.8111157417297363
+temps d'inférence + calcul barycentre 0.054988861083984375
+
+0: 480x640 1 person, 43.4ms
+Speed: 2.3ms preprocess, 43.4ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 4
+delai en seconde 0.9093234539031982
+temps d'inférence + calcul barycentre 0.053995609283447266
+
+0: 480x640 1 person, 45.7ms
+Speed: 1.6ms preprocess, 45.7ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 5
+delai en seconde 0.9113163948059082
+temps d'inférence + calcul barycentre 0.0549626350402832
+
+0: 480x640 1 person, 46.7ms
+Speed: 1.6ms preprocess, 46.7ms inference, 0.8ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 6
+delai en seconde 1.0143933296203613
+temps d'inférence + calcul barycentre 0.05646109580993652
+
+0: 480x640 1 person, 46.3ms
+Speed: 4.0ms preprocess, 46.3ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 7
+delai en seconde 1.0192604064941406
+temps d'inférence + calcul barycentre 0.05831766128540039
+
+0: 480x640 1 person, 47.8ms
+Speed: 1.6ms preprocess, 47.8ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 8
+delai en seconde 0.7170863151550293
+temps d'inférence + calcul barycentre 0.05803084373474121
+
+0: 480x640 1 person, 41.3ms
+Speed: 1.9ms preprocess, 41.3ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 9
+delai en seconde 0.6061625480651855
+temps d'inférence + calcul barycentre 0.052582740783691406
+
+0: 480x640 1 person, 44.5ms
+Speed: 1.7ms preprocess, 44.5ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 10
+delai en seconde 0.9102983474731445
+temps d'inférence + calcul barycentre 0.054483890533447266
+
+0: 480x640 1 person, 40.8ms
+Speed: 2.0ms preprocess, 40.8ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 11
+delai en seconde 1.2046794891357422
+temps d'inférence + calcul barycentre 0.05093550682067871
+
+0: 480x640 1 person, 46.3ms
+Speed: 1.5ms preprocess, 46.3ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 12
+delai en seconde 0.8129644393920898
+temps d'inférence + calcul barycentre 0.05547833442687988
+
+0: 480x640 1 person, 42.2ms
+Speed: 1.7ms preprocess, 42.2ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 13
+delai en seconde 0.8025646209716797
+temps d'inférence + calcul barycentre 0.050714969635009766
+
+0: 480x640 1 person, 40.4ms
+Speed: 1.7ms preprocess, 40.4ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 14
+delai en seconde 1.001121997833252
+temps d'inférence + calcul barycentre 0.04990339279174805
+
+0: 480x640 1 person, 43.7ms
+Speed: 1.8ms preprocess, 43.7ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 15
+delai en seconde 0.8065872192382812
+temps d'inférence + calcul barycentre 0.05277729034423828
+
+0: 480x640 1 person, 41.5ms
+Speed: 2.0ms preprocess, 41.5ms inference, 0.6ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 16
+delai en seconde 0.707158088684082
+temps d'inférence + calcul barycentre 0.05309176445007324
+
+0: 480x640 1 person, 53.6ms
+Speed: 2.7ms preprocess, 53.6ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'ccw 10'
+[INFO] tello.py - 462 - Response ccw 10: 'ok'
+i ème image 17
+delai en seconde 1.1342253684997559
+temps d'inférence + calcul barycentre 0.06635379791259766
+
+0: 480x640 1 person, 49.9ms
+Speed: 2.1ms preprocess, 49.9ms inference, 0.8ms postprocess per image at shape (1, 3, 480, 640)
+[INFO] tello.py - 438 - Send command: 'cw 10'
+[INFO] tello.py - 462 - Response cw 10: 'ok'
+i ème image 18
+delai en seconde 0.8228847980499268
+temps d'inférence + calcul barycentre 0.06085658073425293
+
+0: 480x640 1 person, 43.9ms
+Speed: 1.9ms preprocess, 43.9ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 19
+delai en seconde 0.05446314811706543
+temps d'inférence + calcul barycentre 0.05445671081542969
+
+0: 480x640 1 person, 41.6ms
+Speed: 3.5ms preprocess, 41.6ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 20
+delai en seconde 0.057752370834350586
+temps d'inférence + calcul barycentre 0.056906700134277344
+
+0: 480x640 1 person, 44.5ms
+Speed: 2.9ms preprocess, 44.5ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 21
+delai en seconde 0.057196855545043945
+temps d'inférence + calcul barycentre 0.0571894645690918
+
+0: 480x640 1 person, 41.4ms
+Speed: 2.4ms preprocess, 41.4ms inference, 0.8ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 22
+delai en seconde 0.05598878860473633
+temps d'inférence + calcul barycentre 0.05598092079162598
+
+0: 480x640 1 person, 42.7ms
+Speed: 1.9ms preprocess, 42.7ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 23
+delai en seconde 0.05501127243041992
+temps d'inférence + calcul barycentre 0.05500531196594238
+
+0: 480x640 1 person, 48.0ms
+Speed: 4.8ms preprocess, 48.0ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 24
+delai en seconde 0.06299185752868652
+temps d'inférence + calcul barycentre 0.06298613548278809
+
+0: 480x640 1 person, 47.4ms
+Speed: 3.9ms preprocess, 47.4ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 25
+delai en seconde 0.06212306022644043
+temps d'inférence + calcul barycentre 0.062114715576171875
+
+0: 480x640 1 person, 46.1ms
+Speed: 2.5ms preprocess, 46.1ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 26
+delai en seconde 0.05933737754821777
+temps d'inférence + calcul barycentre 0.059329986572265625
+
+0: 480x640 1 person, 42.4ms
+Speed: 2.9ms preprocess, 42.4ms inference, 0.8ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 27
+delai en seconde 0.05693316459655762
+temps d'inférence + calcul barycentre 0.05692410469055176
+
+0: 480x640 1 person, 42.6ms
+Speed: 3.7ms preprocess, 42.6ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 28
+delai en seconde 0.05701160430908203
+temps d'inférence + calcul barycentre 0.057003021240234375
+
+0: 480x640 1 person, 41.4ms
+Speed: 2.6ms preprocess, 41.4ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 29
+delai en seconde 0.05386209487915039
+temps d'inférence + calcul barycentre 0.05385422706604004
+
+0: 480x640 1 person, 41.9ms
+Speed: 2.7ms preprocess, 41.9ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 30
+delai en seconde 0.05612993240356445
+temps d'inférence + calcul barycentre 0.056122541427612305
+
+0: 480x640 1 person, 46.0ms
+Speed: 3.2ms preprocess, 46.0ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 31
+delai en seconde 0.06035041809082031
+temps d'inférence + calcul barycentre 0.060344696044921875
+
+0: 480x640 1 person, 47.2ms
+Speed: 2.5ms preprocess, 47.2ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 32
+delai en seconde 0.06108593940734863
+temps d'inférence + calcul barycentre 0.06029105186462402
+
+0: 480x640 1 person, 47.0ms
+Speed: 4.6ms preprocess, 47.0ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 33
+delai en seconde 0.06171083450317383
+temps d'inférence + calcul barycentre 0.061702728271484375
+
+0: 480x640 1 person, 43.6ms
+Speed: 3.4ms preprocess, 43.6ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 34
+delai en seconde 0.05741262435913086
+temps d'inférence + calcul barycentre 0.05740547180175781
+
+0: 480x640 1 person, 45.4ms
+Speed: 2.8ms preprocess, 45.4ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 35
+delai en seconde 0.059914350509643555
+temps d'inférence + calcul barycentre 0.059398651123046875
+
+0: 480x640 1 person, 44.6ms
+Speed: 2.5ms preprocess, 44.6ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 36
+delai en seconde 0.0576167106628418
+temps d'inférence + calcul barycentre 0.057608842849731445
+
+0: 480x640 1 person, 46.7ms
+Speed: 2.7ms preprocess, 46.7ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 37
+delai en seconde 0.05970644950866699
+temps d'inférence + calcul barycentre 0.05969810485839844
+
+0: 480x640 1 person, 45.7ms
+Speed: 2.1ms preprocess, 45.7ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 38
+delai en seconde 0.0579068660736084
+temps d'inférence + calcul barycentre 0.05789947509765625
+
+0: 480x640 1 person, 42.0ms
+Speed: 2.8ms preprocess, 42.0ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 39
+delai en seconde 0.0546412467956543
+temps d'inférence + calcul barycentre 0.05463433265686035
+
+0: 480x640 1 person, 42.9ms
+Speed: 3.5ms preprocess, 42.9ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 40
+delai en seconde 0.058412790298461914
+temps d'inférence + calcul barycentre 0.058400630950927734
+
+0: 480x640 1 person, 45.6ms
+Speed: 2.6ms preprocess, 45.6ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 41
+delai en seconde 0.058141231536865234
+temps d'inférence + calcul barycentre 0.05813336372375488
+
+0: 480x640 1 person, 42.5ms
+Speed: 2.3ms preprocess, 42.5ms inference, 1.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 42
+delai en seconde 0.0560302734375
+temps d'inférence + calcul barycentre 0.05602264404296875
+
+0: 480x640 1 person, 49.8ms
+Speed: 2.6ms preprocess, 49.8ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 43
+delai en seconde 0.06283283233642578
+temps d'inférence + calcul barycentre 0.061986684799194336
+
+0: 480x640 1 person, 42.1ms
+Speed: 3.9ms preprocess, 42.1ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 44
+delai en seconde 0.05671429634094238
+temps d'inférence + calcul barycentre 0.056706905364990234
+
+0: 480x640 1 person, 41.9ms
+Speed: 4.3ms preprocess, 41.9ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 45
+delai en seconde 0.05614352226257324
+temps d'inférence + calcul barycentre 0.05613565444946289
+
+0: 480x640 1 person, 39.1ms
+Speed: 3.5ms preprocess, 39.1ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 46
+delai en seconde 0.05409669876098633
+temps d'inférence + calcul barycentre 0.05408883094787598
+
+0: 480x640 1 person, 44.2ms
+Speed: 2.2ms preprocess, 44.2ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 47
+delai en seconde 0.05681443214416504
+temps d'inférence + calcul barycentre 0.0568087100982666
+
+0: 480x640 1 person, 45.7ms
+Speed: 4.7ms preprocess, 45.7ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 48
+delai en seconde 0.06142735481262207
+temps d'inférence + calcul barycentre 0.06068921089172363
+
+0: 480x640 1 person, 50.2ms
+Speed: 2.5ms preprocess, 50.2ms inference, 0.7ms postprocess per image at shape (1, 3, 480, 640)
+i ème image 49
+delai en seconde 0.06273841857910156
+temps d'inférence + calcul barycentre 0.06273102760314941
