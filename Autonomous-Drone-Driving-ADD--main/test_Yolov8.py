@@ -4,6 +4,14 @@ import person_detector_yolov8 as detector
 import numpy as np
 import matplotlib.pyplot as plt
 
+#Profilage
+import cProfile
+import pstats
+
+# Profiler le script entier
+profiler = cProfile.Profile()
+profiler.enable()
+
 
 tello = Tello()
 tello.connect()
@@ -12,6 +20,9 @@ print("batterie",tello.get_battery())
 
 tello.streamon()
 frame_read = tello.get_frame_read()
+
+latency = []
+calcul_latency = []
 
 tello.takeoff()
 
@@ -58,10 +69,21 @@ for i in range (50): #boucle while meilleur mais flemme de traiter comment arret
     print("i ème image",i)
     print("delai en seconde",end-start)
     print("temps d'inférence + calcul barycentre",temps_calcul_end-temps_calcul_start)
+    latency.append(end-start)
+    calcul_latency.append(temps_calcul_end-temps_calcul_start)
 
+
+average_latency = sum(latency)/len(latency)
+average_calcul_latency = sum(calcul_latency)/len(calcul_latency)
+
+print("Temps de latence moyen",average_latency)
+print("Temps de calcul moyen",average_calcul_latency)
 
 tello.land()
 tello.streamoff()
 
 tello.end()
-                
+
+#Fin profilage                
+profiler.disable()
+profiler.dump_stats("output.prof")
