@@ -35,7 +35,7 @@ def command_drone():
     global previous_error_x
     while not stop_thread:
         with data_condition:
-            data_condition.wait(timeout=1)  # Attente d'une nouvelle détection ou d'un timeout
+            data_condition.wait(timeout=0.01)  # Attente d'une nouvelle détection ou d'un timeout
             if detection_results:
                 # Récupération des coordonnées barycentriques de la détection
                 bx, by = detection_results.pop(0)
