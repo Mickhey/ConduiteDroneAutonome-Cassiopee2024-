@@ -1,6 +1,4 @@
-import os.path as osp 
-
-
+import os
 import cv2 
 import numpy as np 
 from PIL import Image
@@ -13,11 +11,19 @@ from tensorflow.compat.v1 import InteractiveSession
 import core.utils as utils
 from core.yolov4 import filter_boxes
 
-physical_devices = tf.config.list_physical_devices('GPU')
-if physical_devices:
-    tf.config.experimental.set_memory_growth(physical_devices[0], True)
+# 0 pour CPU, 1 pour GPU
+USE_GPU = 1
+if USE_GPU:
+    physical_devices = tf.config.list_physical_devices('GPU')
+    if physical_devices:
+           tf.config.experimental.set_memory_growth(physical_devices[0], True)
+           print("Using GPU for computation.")
+    else:
+        print("No GPU found. Falling back to CPU.")
+        os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 else:
-    print("No GPU")
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    print("Using CPU for computation.")
 
 
 def model_inference(image_list):
