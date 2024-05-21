@@ -2,8 +2,8 @@
 
 # Bibliothèques communes
 djitellopy==2.5.0
-numpy==1.26.4
-opencv-python==4.9.0
+#numpy==1.26.4
+#opencv-python==4.9.0
 Pillow==9.1.0
 
 # Bibliothèques spécifiques à YOLOv8
@@ -11,6 +11,6 @@ torch==2.2.2
 ultralytics==8.1.45
 
 # Bibliothèques spécifiques à YOLOv4
-absl-py==2.1.0
-tensorflow==2.16.1
-matplotlib==3.7.1
+#absl-py==2.1.0
+#tensorflow==2.16.1
+#matplotlib==3.7.1
