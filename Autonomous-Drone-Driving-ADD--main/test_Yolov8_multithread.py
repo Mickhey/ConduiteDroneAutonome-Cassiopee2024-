@@ -22,7 +22,7 @@ stop_thread = False  # Variable pour contrôler l'arrêt des threads
 # Paramètres PID initiaux
 k_px = 0.03 # Gain proportionnel pour le contrôle PID optimal à 0.08 / 0.09 / 0.03
 k_dx = 0.09 # Gain dérivé pour le contrôle PID optimal à 0.06 / 0.09 / 0.09
-k_ix = 0.002
+# k_ix = 0.002 en pratique l'intégrateur mène à des instabilités
 
 k_py = 0.1 # Gain proportionnel pour le contrôle PID optimal à 0.08 / 0.09 / 0.03
 k_dy = 0.1 # Gain dérivé pour le contrôle PID optimal à 0.06 / 0.09 / 0.09
@@ -30,12 +30,13 @@ k_dy = 0.1 # Gain dérivé pour le contrôle PID optimal à 0.06 / 0.09 / 0.09
 
 previous_error_x = 0  # Erreur précédente sur l'axe X pour le contrôle PID
 previous_error_y = 0  # Erreur précédente sur l'axe X pour le contrôle PID
-x_err_sum = 0
-y_err_sum = 0
+x_err_sum = 0  # erreur sommée pour l'intégrateur axe X rotation 
+y_err_sum = 0  #  erreur sommée pour l'intégrateur axe Y translation 
 
-xerrsl = []
-xerrl = []
-derrl = []
+# toutes les listes pour stocker chaque type d'erreur
+xerrsl = [] # erreur sommée 
+xerrl = []  # erreur courante
+derrl = []  # erreur dérivée 
 
 # Dimensions de l'image du Tello EDU
 frame_width = 640  # Largeur de l'image du flux vidéo de base 1280 (natif sur le drone)
@@ -63,14 +64,14 @@ def command_drone():
 
 
                 x_err_sum += x_error
-                dx_err = x_error - previous_error_x
+                dx_err = x_error - previous_error_x #erreur précédente ( ou dérivée)
 
                 y_err_sum += y_error
                 dy_err = y_error - previous_error_y
 
 
                 # Calcul de la commande de rotation PID
-                rotate_command = k_px * x_error - k_dx * abs(dx_err) + k_ix * abs(x_err_sum)
+                rotate_command = k_px * x_error - k_dx * abs(dx_err)
 
                 pid_out_y = k_py * y_error - k_dy * abs(dy_err)
                 
@@ -78,13 +79,13 @@ def command_drone():
                 rotate_command = max(0, min(360, int(abs(rotate_command))))
 
                 # Commande de rotation du drone
-                if x_error > 0 or dx_err >=100:
+                if x_error > 0:  # ajout éventuel de la condition "and dx_err > 100 "
                     tello.rotate_clockwise(rotate_command)
-                elif x_error < 0 or dx_err <= -100:
+                elif x_error < 0: # ajout éventuel de la condition "and dx_err < -100 "
                     tello.rotate_counter_clockwise(rotate_command)
                 
-
-                if rapport >= 2.2 and abs(x_error)<=150:
+                # rapport modifié mais globalement le déplacement avant arrière est à revoir
+                if rapport >= 2.2 and abs(x_error)<=150:  # ajout de la condition abs(x_error)<=150 pour empecher le drone d'avancer ou reculer s'il n'est pas déjà centré horizontalement sur la personne, ajout éventuel de "and abs(x_err_sum)<= 1000"
                     if y_error>0:
                         tello.move_forward(max(20,int(abs(pid_out_y))))
                     if y_error < 0:
@@ -94,8 +95,8 @@ def command_drone():
                 xerrsl.append(x_err_sum)
                 derrl.append(dx_err)
                 
-                previous_error_x = x_error  # Mise à jour de l'erreur précédente
-                previous_error_y = y_error
+                previous_error_x = x_error  # Mise à jour de l'erreur précédente en x
+                previous_error_y = y_error  # Mise à jour de l'erreur précédente en y
 
 
 # Fonction pour détecter les personnes à partir des images du drone
@@ -138,6 +139,7 @@ finally:
     print("x_error =",x_error)
     print("previous error x =",previous_error_x)
 
+    # tracer toutes les erreurs , il faut que les courbes tendent vers 0 idéalement
     plt.plot(xerrl)
     plt.title("erreur courante")
     plt.show()
