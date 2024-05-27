@@ -4,7 +4,12 @@ import numpy as np
 import cv2
 import torch
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+D = 0 #O pour GPU 1(si dispo) pour CPU
+if(D==0):
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+else:
+    device = 'cpu'
+
 print(f"Utilisation de {device} pour le traitement.")
 
 #On charge le modèle (ici général entrainer sur coco 80 classes)
@@ -25,7 +30,7 @@ def run_object_detection(image):
     image = Image.fromarray(image)
 
     # Exécuter l'inférence en spécifiant 'classes=0' pour détecter uniquement les personnes et non les auters classes et on limite a une detection
-    results = model.predict(image,classes=0,max_det=1,verbose=False)
+    results = model.predict(image,classes=0,max_det=1,verbose=False,device=device)
 
      # Extraire la detection, la boite puis ces coordonnées pour calculer le barycentre
     if results[0].boxes and len(results[0].boxes) > 0:

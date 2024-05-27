@@ -4,6 +4,7 @@ import person_detector_yolov8 as detector
 import numpy as np
 from threading import Thread, Condition
 
+
 # Initialisation du drone
 tello = Tello()
 tello.connect()  # Connexion au drone Tello
@@ -35,7 +36,7 @@ def command_drone():
     global previous_error_x
     while not stop_thread:
         with data_condition:
-            data_condition.wait(timeout=0.01)  # Attente d'une nouvelle détection ou d'un timeout
+            data_condition.wait(timeout=1)  # Attente d'une nouvelle détection ou d'un timeout
             if detection_results:
                 # Récupération des coordonnées barycentriques de la détection
                 bx, by = detection_results.pop(0)
@@ -66,7 +67,7 @@ def detection_thread():
         inference_end = time.time()  # Temps de fin de l'inférence
         if coordinates != [0, 0, 0, 0] and barycenter:
             with data_condition:
-                # Ajout des coordonnées barycentriques aux résultats de détection
+                # Ajout des coordonnées baryred_bbox = [centriques aux résultats de détection
                 detection_results.append(barycenter)
                 data_condition.notify()  # Notification du thread de commande
         # Stockage des temps d'inférence et de cycle
