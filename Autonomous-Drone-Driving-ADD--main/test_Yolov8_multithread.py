@@ -22,7 +22,7 @@ stop_thread = False  # Variable pour contrôler l'arrêt des threads
 # Paramètres PID initiaux
 k_px = 0.03 # Gain proportionnel pour le contrôle PID optimal à 0.08 / 0.09 / 0.03
 k_dx = 0.09 # Gain dérivé pour le contrôle PID optimal à 0.06 / 0.09 / 0.09
-
+k_ix = 0.002
 
 k_py = 0.1 # Gain proportionnel pour le contrôle PID optimal à 0.08 / 0.09 / 0.03
 k_dy = 0.1 # Gain dérivé pour le contrôle PID optimal à 0.06 / 0.09 / 0.09
@@ -49,7 +49,7 @@ data_condition = Condition()  # Condition pour synchroniser les threads
 
 # Fonction pour commander le drone en fonction des résultats de détection
 def command_drone():
-    global previous_error_x,x_err_sum,x_error,previous_error_y,y_err_sum,y_error
+    global previous_error_x,x_err_sum,x_error,previous_error_y,y_err_sum,y_error,rapport
     while not stop_thread:
         with data_condition:
             data_condition.wait(timeout=0.01)  # Attente d'une nouvelle détection ou d'un timeout
@@ -70,7 +70,7 @@ def command_drone():
 
 
                 # Calcul de la commande de rotation PID
-                rotate_command = k_px * x_error - k_dx * abs(dx_err) 
+                rotate_command = k_px * x_error - k_dx * abs(dx_err) + k_ix * abs(x_err_sum)
 
                 pid_out_y = k_py * y_error - k_dy * abs(dy_err)
                 
@@ -78,20 +78,21 @@ def command_drone():
                 rotate_command = max(0, min(360, int(abs(rotate_command))))
 
                 # Commande de rotation du drone
-                if x_error > 0:
+                if x_error > 0 or dx_err >=100:
                     tello.rotate_clockwise(rotate_command)
-                elif x_error < 0:
+                elif x_error < 0 or dx_err <= -100:
                     tello.rotate_counter_clockwise(rotate_command)
                 
 
-                if y_error > 0 and rapport >= 2:
-                    tello.move_forward(max(20,int(abs(pid_out_y))))
-                elif y_error < 0:
-                    tello.move_back(max(20,int(abs(pid_out_y))))
+                if rapport >= 2.2 and abs(x_error)<=150:
+                    if y_error>0:
+                        tello.move_forward(max(20,int(abs(pid_out_y))))
+                    if y_error < 0:
+                        tello.move_back(max(20,int(abs(pid_out_y))))
 
-                #xerrl.append(x_error)
-                #xerrsl.append(x_err_sum)
-                #derrl.append(d_err)
+                xerrl.append(x_error)
+                xerrsl.append(x_err_sum)
+                derrl.append(dx_err)
                 
                 previous_error_x = x_error  # Mise à jour de l'erreur précédente
                 previous_error_y = y_error
@@ -123,7 +124,7 @@ detection_thread.start()
 command_thread.start()
 
 try:
-    time.sleep(25)  # Temps de test (le drone fonctionne pendant 25 secondes à gerer autrement)
+    time.sleep(40)  # Temps de test (le drone fonctionne pendant 25 secondes à gerer autrement)
 finally:
     stop_thread = True  # Arrêt des threads
     with data_condition:
@@ -136,21 +137,22 @@ finally:
     print("x_err_sum =",x_err_sum)
     print("x_error =",x_error)
     print("previous error x =",previous_error_x)
-    #plt.plot(xerrl)
-    #plt.title("erreur courante")
-    #plt.show()
-    #plt.plot(xerrsl)
-    #plt.title("erreurs sommées")
-    #plt.show()
-    #plt.plot(derrl)
-    #plt.title("erreur dérivée")
-    #plt.show()
 
+    plt.plot(xerrl)
+    plt.title("erreur courante")
+    plt.show()
+    plt.plot(xerrsl)
+    plt.title("erreurs sommées")
+    plt.show()
+    plt.plot(derrl)
+    plt.title("erreur dérivée")
+    plt.show()
 
     tello.end()  # Déconnexion du drone
 
     # Calcul des moyennes des temps d'inférence et de cycle
     average_inference_time = np.mean(inference_times)
     average_cycle_time = np.mean(cycle_times)
+    print(rapport)
     print(f"Moyenne du temps d'inférence: {average_inference_time:.3f} secondes")
     print(f"Moyenne du temps de cycle: {average_cycle_time:.3f} secondes")
