@@ -1,4 +1,4 @@
-import person_detector_yolov8 as detectorv8 #Yolov8
+import person_detector_yolov8 as detectorv8  # Yolov8
 import cv2
 import time
 
@@ -21,7 +21,7 @@ def measure_inference_timev8(image):
 
     for _ in range(num_tests):
         start_time = time.time()
-        result_image, coords, barycenter = detectorv8.run_object_detection(image)
+        result, coords, barycenter = detectorv8.run_object_detection(image)
         end_time = time.time()
         inference_times.append(end_time - start_time)
 
@@ -29,5 +29,7 @@ def measure_inference_timev8(image):
     return avg_inference_time
 
 avg_inference_timev8 = measure_inference_timev8(image)
-#Resultat
-print("Résultat : ", avg_inference_timev8)
+
+# Résultat
+print("Temps d'inférence moyen : ", avg_inference_timev8)
+

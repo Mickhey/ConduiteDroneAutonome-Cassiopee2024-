@@ -43,8 +43,5 @@ def run_object_detection(image):
         coordinates = [0, 0, 0, 0]
         barycenter = [0, 0]
 
-    # Convertir l'image pour l'affichage si nécessaire
-    image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
-
-    return image, coordinates, barycenter
+    return results, coordinates, barycenter
 
