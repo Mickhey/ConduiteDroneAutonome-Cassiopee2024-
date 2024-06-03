@@ -1,6 +1,10 @@
 # Rapport de Performance YOLOv8
 
 Paramètre de base, 640*480 avec le GPU et simplement les contrôles de rotation du drone
+Pc :
+Processeur : Intel® Core™ i7-10870H CPU @ 2.20GHz × 16
+Memmoire : 16.0 GiB
+Carte Graphique : GeForce RTX 3060 Mobile
 
 ## YOLOv8 GPU avec `test_inference_GPU_CPU.py`
 
@@ -180,6 +184,19 @@ L'utilisation de threads permet de réduire significativement le temps de cycle 
 ### Conclusion
 
 Ces améliorations montrent l'efficacité des optimisations apportées, notamment l'utilisation des threads pour la gestion concurrente des tâches, l'ajustement des paramètres PID, et la réduction des délais entre les commandes. Le nouveau script optimisé offre une meilleure réactivité et une exécution plus fluide, ce qui est essentiel pour le suivi en temps réel de personnes avec le drone.
+
+## YOLOv4 avec CPU
+
+Script optimisé à avec CPU
+
+- **Moyenne du temps d'inférence :** 0.382 secondes
+- **Moyenne du temps de cycle :** 0.788 secondes
+
+- **Moyenne du temps d'inférence :** 0.430 secondes
+- **Moyenne du temps de cycle :** 0.843 secondes
+
+- **Moyenne du temps d'inférence :** 0.650 secondes
+- **Moyenne du temps de cycle :** 0.988 secondes
 
 ## Sources
 

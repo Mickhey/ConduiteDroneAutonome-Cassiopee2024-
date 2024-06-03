@@ -43,5 +43,5 @@ def run_object_detection(image):
         coordinates = [0, 0, 0, 0]
         barycenter = [0, 0]
 
-    return results, coordinates, barycenter
+    return image, coordinates, barycenter
 

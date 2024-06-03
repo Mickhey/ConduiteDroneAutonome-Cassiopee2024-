@@ -22,7 +22,7 @@ tello.streamon()
 frame_read = tello.get_frame_read()
 
 tello.takeoff()
-tello.move_up(50)
+#tello.move_up(50)
 
 stop_thread = False
 

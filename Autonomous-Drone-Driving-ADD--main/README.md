@@ -38,6 +38,7 @@ Ce projet utilise la librairie `djitellopy` pour contrôler un drone TelloEdu et
 
 1. Mettre le drone en route et le connecter a la wifi de son ordinateur.
 2. Executer un des test_Yolov8_*.py
+3. Executer optimized.py pour les meilleurs performance.
 
 ## Optimisations et Améliorations
 
