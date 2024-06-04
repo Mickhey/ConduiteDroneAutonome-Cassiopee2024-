@@ -29,7 +29,7 @@ Ce projet utilise la librairie `djitellopy` pour contrôler un drone TelloEdu et
 - git clone <https://github.com/Mickhey/ConduiteDroneAutonome-Cassiopee2024-.git>
 - cd Autonomous-Drone-Driving-ADD--main
 
-1. Installation des dépendances
+2. Installation des dépendances
 
 - Installation de djitellopy via pip install djitellopy
 - Installation de ultralytics : [Ultralytics quickstart](https://docs.ultralytics.com/quickstart/) (Choisir en fonction de son PC)
